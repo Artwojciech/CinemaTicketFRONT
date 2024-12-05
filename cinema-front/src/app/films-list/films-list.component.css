@@ -1,0 +1,13 @@
+.film-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .film {
+    margin: 10px;
+    text-align: center;
+  }
+  img {
+    max-width: 200px;
+  }

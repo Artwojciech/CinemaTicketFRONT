@@ -1,1 +1,8 @@
-<p>films-list works!</p>
+<div class="film-list">
+    <h1>Film List</h1>
+    <div *ngFor="let film of films" class="film">
+      <img [src]="film.image_url" alt="{{ film.title }}" />
+      <h2>{{ film.title }}</h2>
+      <p>Year: {{ film.year }}</p>
+    </div>
+  </div>

@@ -10,14 +10,14 @@ export interface Film {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FilmService {
   private apiUrl = 'http://localhost:8080/films'; // Adres API backendu
 
   constructor(private http: HttpClient) {}
 
-  getFilms(): Observable<Film[]> {
-    return this.http.get<Film[]>(this.apiUrl);
+  getFilms(): Observable<any> {
+    return this.http.get(this.apiUrl);
   }
 }
