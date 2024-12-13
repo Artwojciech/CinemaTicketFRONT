@@ -1,7 +1,7 @@
 <div class="film-list">
     <h1>Film List</h1>
     <div *ngFor="let film of films" class="film">
-      <img [src]="film.image_url" alt="{{ film.title }}" />
+      <img [src]="film.imageUrl" alt="film"/>
       <h2>{{ film.title }}</h2>
       <p>Year: {{ film.year }}</p>
     </div>

@@ -6,7 +6,7 @@ export interface Film {
   id: number;
   title: string;
   year: number;
-  image_url: string;
+  imageUrl: string;
 }
 
 @Injectable({
