@@ -2,13 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface Film {
-  id: number;
-  title: string;
-  year: number;
-  imageUrl: string;
-}
-
 @Injectable({
   providedIn: 'root',
 })
