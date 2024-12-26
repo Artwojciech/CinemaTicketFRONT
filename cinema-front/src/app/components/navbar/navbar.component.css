@@ -1,0 +1,116 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 10px 0;
+  border-bottom: 4px solid #8b0000;
+}
+
+.navbar-item {
+  flex: 1;
+  text-align: center;
+  color: #8b0000;
+  padding: 20px 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 30px; /* Powiększenie napisów */
+  font-weight: bold;
+  background-color: #1a1a1a;
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-item:not(:last-child) {
+  border-right: 4px solid #8b0000;
+}
+
+.navbar-item:hover {
+  background-color: #8b0000;
+  color: #fff;
+}
+
+/* Dropdown menu dla "Miasto" */
+.city-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  border: 2px solid #8b0000;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  width: 150px;
+}
+
+
+.city-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  color: #8b0000;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #8b0000;
+  color: #fff;
+}
+
+/* Styl dla przycisku Data */
+.date-picker button {
+  background-color: transparent;
+  border: none;
+  color: #8b0000;
+  font-size: 30px; /* Dopasowanie rozmiaru do Miasto */
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.date-picker:hover button {
+  color: #fff; 
+}
+
+/* Kalendarz wysuwany */
+.date-picker .calendar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  border: 2px solid #8b0000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.date-picker.active .calendar {
+  display: block;
+}
+
+.calendar input[type="date"] {
+  background-color: #1a1a1a;
+  border: 2px solid #8b0000;
+  color: #8b0000;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Pole do wyszukiwania */
+.movie-search input {
+  background-color: #1a1a1a;
+  border: 2px solid #8b0000;
+  color: #8b0000;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  width: 80%;
+}

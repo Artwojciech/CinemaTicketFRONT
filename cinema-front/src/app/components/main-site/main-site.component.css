@@ -1,0 +1,11 @@
+.background {
+    height: 85vh; 
+    background-image: url('/kinografikaznapisem.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+

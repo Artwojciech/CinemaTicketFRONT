@@ -1,1 +1,26 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <!-- Kafelek: Miasto -->
+  <div class="navbar-item city-dropdown">
+    Miasto
+    <ul class="dropdown-menu">
+      <li>Warszawa</li>
+      <li>Kraków</li>
+      <li>Łódź</li>
+      <li>Wrocław</li>
+      <li>Poznań</li>
+    </ul>
+  </div>
+
+  <!-- Kafelek: Data -->
+  <div class="navbar-item date-picker" [class.active]="showCalendar">
+    <button (click)="toggleCalendar()">Data</button>
+    <div class="calendar" *ngIf="showCalendar">
+      <input type="date" />
+    </div>
+  </div>
+
+  <!-- Kafelek: Wyszukaj -->
+  <div class="navbar-item movie-search">
+    <input type="text" placeholder="Wpisz tytuł filmu..." />
+  </div>
+</nav>

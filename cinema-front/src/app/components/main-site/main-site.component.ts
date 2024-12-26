@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-main-site',
-  imports: [],
+  standalone: true,
+  imports: [NavbarComponent],
   templateUrl: './main-site.component.html',
-  styleUrl: './main-site.component.css'
+  styleUrls: ['./main-site.component.css']
 })
-export class MainSiteComponent {
-
-}
+export class MainSiteComponent {}
