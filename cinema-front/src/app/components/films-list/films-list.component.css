@@ -1,13 +1,64 @@
 .film-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-  }
+  background-color: #1a1a1a; /* Ciemne tło */
+  color: #fff; /* Biały tekst */
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  min-height: 100vh; /* Pełna wysokość widoku */
+}
+
+.film-list h1 {
+  text-align: center;
+  color: #8b0000; /* Karmazynowy kolor nagłówka */
+  margin-bottom: 30px;
+}
+
+.film {
+  display: flex;
+  align-items: center;
+  border: 2px solid #8b0000; /* Karmazynowa obwódka */
+  border-radius: 10px; /* Zaokrąglenie narożników */
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #252525; /* Tło dla boxa filmu */
+  cursor: pointer; /* Zmiana kursora na rękę */
+  transition: transform 0.2s; /* Animacja po najechaniu */
+}
+
+.film:hover {
+  transform: scale(1.05); /* Powiększenie na hover */
+}
+
+
+.film img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover; /* Dopasowanie obrazu */
+  border-radius: 5px; /* Zaokrąglenie obrazka */
+  margin-right: 20px; /* Odstęp między obrazkiem a tekstem */
+  border: 2px solid #8b0000; /* Obwódka obrazka */
+}
+
+.film h2 {
+  color: #8b0000; /* Karmazynowy tytuł filmu */
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.film p {
+  margin: 0;
+  font-size: 16px;
+  color: #d3d3d3; /* Jasnoszary tekst */
+}
+
+@media (max-width: 768px) {
   .film {
-    margin: 10px;
+    flex-direction: column;
     text-align: center;
   }
-  img {
-    max-width: 200px;
+
+  .film img {
+    margin-right: 0;
+    margin-bottom: 15px;
   }
+}

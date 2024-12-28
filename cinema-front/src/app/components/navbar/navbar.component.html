@@ -1,13 +1,8 @@
 <nav class="navbar">
-  <!-- Kafelek: Miasto -->
   <div class="navbar-item city-dropdown">
     Miasto
     <ul class="dropdown-menu">
-      <li>Warszawa</li>
-      <li>Kraków</li>
-      <li>Łódź</li>
-      <li>Wrocław</li>
-      <li>Poznań</li>
+      <li *ngFor="let city of cities" (click)="onCitySelect(city)">{{ city }}</li>
     </ul>
   </div>
 
@@ -15,12 +10,26 @@
   <div class="navbar-item date-picker" [class.active]="showCalendar">
     <button (click)="toggleCalendar()">Data</button>
     <div class="calendar" *ngIf="showCalendar">
-      <input type="date" />
+      <input type="date" (change)="onDateSelect($event)" />
     </div>
   </div>
 
   <!-- Kafelek: Wyszukaj -->
   <div class="navbar-item movie-search">
-    <input type="text" placeholder="Wpisz tytuł filmu..." />
+    <input
+      type="text"
+      [(ngModel)]="titleQuery"
+      placeholder="Wpisz tytuł filmu..."
+      (keydown)="onTitleSearch($event)"
+    />
+  </div>
+
+  <!-- Kafelek: Profil -->
+  <div class="navbar-item profile" (click)="toggleProfilePanel()" [class.active]="showProfile">
+    Profil
+    <div class="profile-panel" *ngIf="showProfile">
+      <p><strong>Użytkownik:</strong> {{ username || 'Brak' }}</p>
+      <p><strong>Status:</strong> {{ status || 'Brak' }}</p>
+    </div>
   </div>
 </nav>

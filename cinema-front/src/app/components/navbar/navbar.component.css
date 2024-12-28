@@ -13,7 +13,7 @@
   color: #8b0000;
   padding: 20px 0;
   font-family: 'Arial', sans-serif;
-  font-size: 30px; /* Powiększenie napisów */
+  font-size: 30px;
   font-weight: bold;
   background-color: #1a1a1a;
   position: relative;
@@ -29,21 +29,18 @@
   color: #fff;
 }
 
-/* Dropdown menu dla "Miasto" */
 .city-dropdown .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 100%; /* Pozycja poniżej kafelka */
+  left: 0; /* Wyrównanie do lewej strony kafelka */
+  width: 100%; /* Szerokość menu dopasowana do kafelka */
   background-color: #1a1a1a;
   border: 2px solid #8b0000;
   list-style: none;
   padding: 10px 0;
   margin: 0;
-  width: 150px;
 }
-
 
 .city-dropdown:hover .dropdown-menu {
   display: block;
@@ -66,14 +63,14 @@
   background-color: transparent;
   border: none;
   color: #8b0000;
-  font-size: 30px; /* Dopasowanie rozmiaru do Miasto */
+  font-size: 30px;
   font-weight: bold;
   cursor: pointer;
   outline: none;
 }
 
 .date-picker:hover button {
-  color: #fff; 
+  color: #fff;
 }
 
 /* Kalendarz wysuwany */
@@ -113,4 +110,39 @@
   border-radius: 5px;
   outline: none;
   width: 80%;
+}
+
+/* Styl dla kafelka Profil */
+.profile {
+  text-align: center;
+  color: #8b0000;
+  cursor: pointer;
+}
+
+.profile:hover {
+  background-color: #8b0000;
+  color: #fff;
+}
+
+/* Panel informacyjny dla Profil */
+.profile-panel {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #1a1a1a;
+  border: 2px solid #8b0000;
+  padding: 10px;
+  width: 200px;
+  text-align: left;
+}
+
+.profile-panel p {
+  margin: 0;
+  padding: 5px 0;
+  color: #8b0000;
+}
+
+.profile-panel p strong {
+  color: #fff;
 }

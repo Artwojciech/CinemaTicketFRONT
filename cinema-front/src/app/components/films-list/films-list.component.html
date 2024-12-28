@@ -1,8 +1,10 @@
+<app-navbar></app-navbar>
 <div class="film-list">
-    <h1>Film List</h1>
-    <div *ngFor="let film of films" class="film">
-      <img [src]="film.imageUrl" alt="film"/>
+  <div *ngFor="let film of films" class="film" [routerLink]="['/film', film.id]">
+    <img [src]="film.imageUrl" alt="film" />
+    <div class="film-details">
       <h2>{{ film.title }}</h2>
       <p>Year: {{ film.year }}</p>
     </div>
   </div>
+</div>

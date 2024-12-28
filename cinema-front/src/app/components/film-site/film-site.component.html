@@ -1,1 +1,7 @@
-<p>film-site works!</p>
+<div *ngIf="film">
+  <img [src]="film?.imageUrl" alt="{{ film.title }}" />
+  <h1>{{ film?.title }}</h1>
+  <p><strong>Year:</strong> {{ film?.year }}</p>
+  <p><strong>Director:</strong> {{ film?.director }}</p>
+  <p><strong>Description:</strong> {{ film?.description }}</p>
+</div>
