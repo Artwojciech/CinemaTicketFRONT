@@ -1,0 +1,104 @@
+.film-page {
+    display: flex;
+    flex-direction: column; /* Układ pionowy */
+    background-color: #000; /* Czarny kolor tła */
+    min-height: 100vh; /* Minimalna wysokość ekranu */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Przewijanie w przypadku nadmiaru treści */
+  }
+  
+  .film-container,
+  .cinema-selection {
+    border: 2px solid #8b0000; /* Karmazynowa ramka */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px; /* Odstęp między sekcjami */
+    background-color: #1a1a1a; /* Tło sekcji */
+  }
+  
+  .film-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .film-image img {
+    max-width: 300px;
+    border: 2px solid #8b0000;
+    border-radius: 10px;
+  }
+  
+  .film-details {
+    flex: 1;
+    color: #fff;
+  }
+  
+  .film-details h1 {
+    color: #8b0000;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cinema-selection h2 {
+    font-size: 1.5rem;
+    color: #8b0000;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .cinema-selection h3 {
+    font-size: 1.5rem;
+    color: #8b0000;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .cinema-buttons,
+  .projection-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Pozwala na zawijanie wierszy */
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .cinema-buttons button,
+  .projection-buttons button {
+    background-color: #8b0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cinema-buttons button.selected,
+  .projection-buttons button.selected {
+    background-color: #ff4500;
+  }
+  
+  .cinema-buttons button:hover,
+  .projection-buttons button:hover {
+    background-color: #ff4500;
+  }
+  
+  .seat-map-button {
+    background-color: #8b0000;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .seat-map-button:hover {
+    background-color: #ff4500;
+  }
+  

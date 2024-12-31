@@ -1,7 +1,51 @@
-<div *ngIf="film">
-  <img [src]="film?.imageUrl" alt="{{ film.title }}" />
-  <h1>{{ film?.title }}</h1>
-  <p><strong>Year:</strong> {{ film?.year }}</p>
-  <p><strong>Director:</strong> {{ film?.director }}</p>
-  <p><strong>Description:</strong> {{ film?.description }}</p>
+<div class="film-page">
+  <!-- Div z filmem -->
+  <div class="film-container">
+    <div class="film-image">
+      <img [src]="film?.imageUrl" alt="{{ film?.title }}" />
+    </div>
+    <div class="film-details">
+      <h1>{{ film?.title }}</h1>
+      <p><strong>Year:</strong> {{ film?.year }}</p>
+      <p><strong>Release Date:</strong> {{ film?.releaseDate }}</p>
+      <p><strong>Duration:</strong> {{ film?.duration }} min</p>
+      <p><strong>Age Category:</strong> {{ film?.ageCategory }}</p>
+      <p><strong>Genre:</strong> {{ film?.genre }}</p>
+      <p><strong>Description:</strong> {{ film?.description }}</p>
+      <p><strong>Director:</strong> {{ film?.director }}</p>
+      <p><strong>Actors:</strong> {{ film?.actors }}</p>
+    </div>
+  </div>
+
+  <!-- Div z wyborem kina -->
+  <div class="cinema-selection">
+    <h2>Select Cinema</h2>
+    <div class="cinema-buttons">
+      <button
+        *ngFor="let cinema of availableCinemas"
+        [class.selected]="selectedCinema === cinema"
+        (click)="onCinemaSelect(cinema)"
+      >
+        {{ cinema.name }}
+      </button>
+    </div>
+
+    <div *ngIf="selectedCinemaProjections.length > 0" class="projections">
+      <h3>Available Projections</h3>
+      <div class="projection-buttons">
+        <button
+          *ngFor="let projection of selectedCinemaProjections"
+          [class.selected]="selectedProjection === projection"
+          (click)="onProjectionSelect(projection)"
+        >
+          {{ projection.time }}
+        </button>
+      </div>
+      <div *ngIf="selectedProjection">
+        <button class="seat-map-button" (click)="navigateToSeatMap()">
+          Choose Seat
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

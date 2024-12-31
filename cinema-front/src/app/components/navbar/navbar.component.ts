@@ -29,13 +29,14 @@ export class NavbarComponent implements OnInit {
   constructor(private cinemaService: CinemaService, private router: Router) {}
 
   ngOnInit() {
-    this.cinemaService.getCinemas().subscribe((response) => {
+    this.cinemaService.getCinemas().subscribe((response: { cinemas: Cinema[] }) => {
       console.log('Odpowiedź z backendu:', response);
-      const cinemas = response.cinemas || response; // Obsługuje dwie struktury odpowiedzi
+      const cinemas = response.cinemas;
       this.cities = Array.from(new Set(cinemas.map((cinema: Cinema) => cinema.city)));
       console.log('Unikalne miasta:', this.cities);
     });
   }
+  
 
   toggleCalendar() {
     this.showCalendar = !this.showCalendar;
