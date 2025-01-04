@@ -1,1 +1,31 @@
-<p>seat-map works!</p>
+<div class="container">
+    <div class="seat-map-container">
+      <div class="seat-map">
+        <div *ngFor="let row of rows" class="seat-row">
+          <div
+            *ngFor="let seat of row"
+            class="seat"
+            [ngClass]="{
+              normal: seat.typeName === 'normal' && !seat.isOccupied,
+              vip: seat.typeName === 'vip' && !seat.isOccupied,
+              'super-vip': seat.typeName === 'super vip' && !seat.isOccupied,
+              occupied: seat.isOccupied,
+              selected: selectedSeat?.id === seat.id
+            }"
+            (click)="selectSeat(seat)"
+          >
+            {{ seat.rowLetter }}{{ seat.columnNumber }}
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="selected-seat-info" *ngIf="selectedSeat">
+      <p><strong>Row:</strong> {{ selectedSeat.rowLetter }}</p>
+      <p><strong>Column:</strong> {{ selectedSeat.columnNumber }}</p>
+      <p><strong>Type:</strong> {{ selectedSeat.typeName }}</p>
+      <p><strong>Cost:</strong> ${{ selectedSeat.cost }}</p>
+      <button>Pay</button>
+    </div>
+  </div>
+  

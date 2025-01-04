@@ -1,0 +1,102 @@
+  .container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%; /* Wypełnienie całej strony */
+    box-sizing: border-box;
+  }
+  
+  /* Kontener dla mapy siedzeń */
+  .seat-map-container {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 10px red;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Mapa siedzeń */
+  .seat-map {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Odstęp między rzędami */
+  }
+  
+  /* Rząd siedzeń */
+  .seat-row {
+    display: flex;
+    gap: 10px; /* Odstęp między siedzeniami w rzędzie */
+  }
+  
+  /* Styl pojedynczego siedzenia */
+  .seat {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Style dla typów siedzeń */
+  .seat.normal {
+    background-color: green;
+  }
+  
+  .seat.vip {
+    background-color: gold;
+  }
+  
+  .seat.super-vip {
+    background-color: darkgoldenrod;
+  }
+  
+  .seat.occupied {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  
+  .seat.selected {
+    background-color: lightblue;
+  }
+  
+  /* Szczegóły wybranego siedzenia */
+  .selected-seat-info {
+    background-color: #1a1a1a;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px red;
+  }
+  
+  .selected-seat-info p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: white;
+  }
+  
+  .selected-seat-info button {
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .selected-seat-info button:hover {
+    background-color: darkred;
+  }
+  
