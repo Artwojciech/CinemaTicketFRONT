@@ -62,9 +62,18 @@ export class FilmSiteComponent implements OnInit {
     this.selectedProjection = projection;
   }
 
-  navigateToSeatMap() {
-    if (this.selectedProjection) {
-      this.router.navigate(['/seat-map', this.selectedProjection.id]);
+  navigateToSeatMapWithDetails() {
+    if (this.selectedProjection && this.selectedCinema && this.film) {
+      this.router.navigate(['/seat-map', this.selectedProjection.id], {
+        queryParams: {
+          city: this.selectedCinema.city,
+          cinema: this.selectedCinema.name,
+          time: this.selectedProjection.time,
+          film: this.film.title,
+        },
+      });
+    } else {
+      console.error('Missing data to navigate to seat map.');
     }
   }
 }

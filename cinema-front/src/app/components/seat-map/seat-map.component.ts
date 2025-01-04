@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SeatService } from '../../services/seat/seat.service';
 import { Seat } from '../../models/seat.model';
 import { CommonModule } from '@angular/common';
@@ -18,7 +18,11 @@ export class SeatMapComponent implements OnInit {
   selectedSeat: Seat | null = null;
   projectionId: number | null = null;
 
-  constructor(private seatService: SeatService, private route: ActivatedRoute) {}
+  constructor(
+    private seatService: SeatService, 
+    private route: ActivatedRoute, 
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.projectionId = Number(this.route.snapshot.paramMap.get('projectionId'));
@@ -59,4 +63,26 @@ export class SeatMapComponent implements OnInit {
       }
     }
   }
+
+  navigateToPayment() {
+    if (this.selectedSeat) {
+      this.route.queryParams.subscribe((params) => {
+        this.router.navigate(['/payment'], {
+          queryParams: {
+            city: params['city'] || 'Unknown City',
+            cinema: params['cinema'] || 'Unknown Cinema',
+            time: params['time'] || 'Unknown Time',
+            row: this.selectedSeat!.rowLetter || 'Unknown Row',
+            column: this.selectedSeat!.columnNumber || 0,
+            type: this.selectedSeat!.typeName || 'Unknown Type',
+            cost: this.selectedSeat!.cost || 0,
+            film: params['film'] || 'Unknown Film',
+          },
+        });
+      });
+    } else {
+      console.error('No seat selected.');
+    }
+  }
+  
 }

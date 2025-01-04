@@ -25,7 +25,7 @@
       <p><strong>Column:</strong> {{ selectedSeat.columnNumber }}</p>
       <p><strong>Type:</strong> {{ selectedSeat.typeName }}</p>
       <p><strong>Cost:</strong> ${{ selectedSeat.cost }}</p>
-      <button>Pay</button>
+      <button (click)="navigateToPayment()">Pay</button>
     </div>
   </div>
   

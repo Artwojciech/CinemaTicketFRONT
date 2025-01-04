@@ -1,1 +1,34 @@
-<p>payment-site works!</p>
+<div class="payment-container">
+    <div class="summary">
+      <h2>Order Summary</h2>
+      <p><strong>City:</strong> {{ city }}</p>
+      <p><strong>Cinema:</strong> {{ cinema }}</p>
+      <p><strong>Time:</strong> {{ time }}</p>
+      <p><strong>Film:</strong> {{ film }}</p>
+      <p><strong>Row:</strong> {{ row }}</p>
+      <p><strong>Column:</strong> {{ column }}</p>
+      <p><strong>Type:</strong> {{ type }}</p>
+      <p><strong>Cost:</strong> ${{ cost }}</p>
+    </div>
+  
+    <div class="payment-options">
+      <h3>Select Payment Method</h3>
+      <button (click)="selectPaymentMethod('BLIK')">BLIK</button>
+      <button (click)="selectPaymentMethod('MasterCard')">MasterCard</button>
+  
+      <div *ngIf="paymentMethod === 'BLIK'" class="blik-form">
+        <p>Enter BLIK code:</p>
+        <input type="text" maxlength="6" placeholder="XXXXXX" />
+        <button>Pay</button>
+      </div>
+  
+      <div *ngIf="paymentMethod === 'MasterCard'" class="mastercard-form">
+        <p>Enter Card Details:</p>
+        <input type="text" placeholder="Card Number" />
+        <input type="text" placeholder="Expiration Date" />
+        <input type="text" placeholder="CVV" />
+        <button>Pay</button>
+      </div>
+    </div>
+  </div>
+  

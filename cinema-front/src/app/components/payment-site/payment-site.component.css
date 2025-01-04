@@ -1,0 +1,107 @@
+  .payment-container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Pełna wysokość ekranu */
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .summary {
+    background-color: #1a1a1a; /* Ciemne tło dla ramki */
+    border: 2px solid crimson; /* Czerwona obwódka */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 0 15px crimson; /* Poświata wokół ramki */
+  }
+  
+  .summary h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: crimson;
+    text-shadow: 1px 1px 4px red;
+  }
+  
+  .summary p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: white;
+  }
+  
+  .payment-options {
+    background-color: #1a1a1a; /* Ciemne tło dla sekcji płatności */
+    border: 2px solid crimson; /* Czerwona obwódka */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 0 15px crimson; /* Poświata */
+  }
+  
+  .payment-options h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: crimson;
+    text-shadow: 1px 1px 4px red;
+  }
+  
+  .payment-options button {
+    background-color: crimson;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .payment-options button:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+  }
+  
+  .blik-form,
+  .mastercard-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .blik-form input,
+  .mastercard-form input {
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid crimson;
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .blik-form button,
+  .mastercard-form button {
+    background-color: crimson;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .blik-form button:hover,
+  .mastercard-form button:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+  }
+  
